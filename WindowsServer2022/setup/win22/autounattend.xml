@@ -49,7 +49,7 @@
                     <InstallFrom>
                         <MetaData wcm:action="add">
                             <Key>/IMAGE/NAME</Key>
-                            <Value>Windows Server 2022 SERVERDATACENTER</Value>
+                            <Value>Windows Server 2022 SERVERSTANDARD</Value>
                         </MetaData>
                     </InstallFrom>
                     <InstallTo>
@@ -64,7 +64,7 @@
 			    <AcceptEula>true</AcceptEula>
                 <ProductKey>
                     <WillShowUI>Never</WillShowUI>
-                    <Key>11111-22222-33333-44444-55555</Key>
+                    <Key>VDYBN-27WPP-V4HQT-9VMD4-VMK7H</Key>
                 </ProductKey>
             </UserData>
         </component>
@@ -115,7 +115,17 @@
             </AutoLogon>
             <FirstLogonCommands>
                 <SynchronousCommand wcm:action="add">
-                    <Order>1</Order>
+                    <Description>Set Static IP Address</Description>
+                    <Order>20</Order>
+                    <CommandLine>netsh interface ip set address "Ethernet0" static 10.69.2.191 255.255.255.0 10.69.2.254</CommandLine>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <Description>Set First DNS</Description>
+                    <Order>21</Order>
+                    <CommandLine>netsh interface ip set dnsservers "Ethernet0" static 8.8.8.8</CommandLine>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <Order>30</Order>
                     <CommandLine>powershell -ExecutionPolicy Bypass -File a:\setup.ps1</CommandLine>
                     <Description>Enable WinRM service</Description>
                     <RequiresUserInput>true</RequiresUserInput>
