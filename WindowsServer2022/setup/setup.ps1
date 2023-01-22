@@ -2,14 +2,14 @@ $ErrorActionPreference = "Stop"
 
 # Switch network connection to private mode
 # Required for WinRM firewall rules
-$profile = Get-NetConnectionProfile
-Set-NetConnectionProfile -Name $profile.Name -NetworkCategory Private
+#$profile = Get-NetConnectionProfile
+#Set-NetConnectionProfile -Name $profile.Name -NetworkCategory Private
 
 # Copy BGINFO and custom INI file
-net use x: \\vserv01\packerbuild /persistent:no
-xcopy /E X:\BGinfo "c:\program files (x86)\bginfo\"
-xcopy X:\startup\bginfo.bat "C:\programdata\microsoft\windows\start menu\programs\startup"
-"C:\programdata\microsoft\windows\start menu\programs\startup\bginfo.bat"
+#net use x: \\vserv01\packerbuild /persistent:no
+#xcopy /E X:\BGinfo "c:\program files (x86)\bginfo\"
+#xcopy X:\startup\bginfo.bat "C:\programdata\microsoft\windows\start menu\programs\startup"
+#"C:\programdata\microsoft\windows\start menu\programs\startup\bginfo.bat"
 
 #Install PS Windows Update Module
 
