@@ -133,7 +133,7 @@
             </FirstLogonCommands>
             <UserAccounts>
                 <AdministratorPassword>
-                    <Value>Password1$</Value>
+                    <Value>VMware1!</Value>
                     <PlainText>true</PlainText>
                 </AdministratorPassword>
             </UserAccounts>
